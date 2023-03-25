@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet" href="/edit.css")
+  body
+    h1= title
+    form(method='POST' action=`/events/${event._id}?_method=PUT`)
+      label(for='name') Name:
+      input(type='text' name='name' value=event.name required)
+      label(for='description') Description:
+      textarea(name='description' required)= event.description
+      label(for='date') Date:
+      input(type='date' name='date' value=event.date required)
+      button(type='submit') Update Event
+    form(method='POST' action=`/events/${event._id}?_method=DELETE`)
+      button(type='submit') Delete Event

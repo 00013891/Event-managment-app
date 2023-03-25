@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet" href="/edit.css")
+  body
+    h1= title
+    form(method='POST' action='/events')
+      label(for='name') Name:
+      input(type='text' name='name' required)
+      label(for='description') Description:
+      textarea(name='description' required)
+      label(for='date') Date:
+      input(type='date' name='date' required)
+      button(type='submit') Create Event
